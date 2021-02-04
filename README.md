@@ -14,6 +14,9 @@ Implementation of the Application's objective is illustrated in the following im
 </p>
 
 ## Application Flow
+<details>
+<summary>Application Flow</summary>
+         
 The implementation steps of the application are:
 * Start a video stream capture using the webcam;  
 * Display of the colors’ detection spots;  
@@ -55,7 +58,7 @@ Yellow   | 30 – 57           |  102 – 115   |  174 – 216
 White    | None of the above |  68 – 97     |  181 – 220
 
 3. **Scan accuracy**  
-After the colors’ have been saved, a copy of the cube scanned face is displayed next to the original grid and the user is asked for the correctness of the scan. The copy of the scanned face is similar to the grid, only this time, the squares in the grid are colored. Verification of scan accuracy is performed by the *check_colors_ok* function, which waits for confirmation from the user.
+After the colors’ have been saved, a copy of the cube scanned face is displayed next to the original grid and the user is asked for the correctness of the scan. The copy of the scanned face is similar to the grid, only this time, the squares in the grid are colored. Verification of scan accuracy is performed by the *check_colors_ok()* function, which waits for confirmation from the user.
 - 'y' key, if the scan is alright;
 - 'n' key, otherwise. (In this case, the user will need to scan again)
 
@@ -65,13 +68,39 @@ After the colors’ have been saved, a copy of the cube scanned face is displaye
       Detected colors shown in a colorful grid 
 </p>
 
-4. **Face duplication **  
-After the colors’ have been saved, a copy of the cube scanned face is displayed next to the original grid and the user is asked for the correctness of the scan. The copy of the scanned face is similar to the grid, only this time, the squares in the grid are colored. Verification of scan accuracy is performed by the *check_colors_ok* function, which waits for confirmation from the user.
-- 'y' key, if the scan is alright;
-- 'n' key, otherwise. (In this case, the user will need to scan again)
+4. **Face duplication**  
+Even if the user will type "n", after some tries eventually, it will be able to correctly scan the colors. After it scans the colors successfully, the problem is whether the scanned face had previously been scanned. To get rid of this problem, *check_face_duplicated()* has been implemented.
 
 <p align="center">
-  <img width="450" height="300" src="https://user-images.githubusercontent.com/54026035/106912799-48d9f480-66fb-11eb-943e-50e2ad9bf5e1.png" alt="Detected colors">
+  <img width="450" height="300" src="https://user-images.githubusercontent.com/54026035/106921905-61024180-6704-11eb-8d6e-6c679933ae37.png" alt="Face duplication">
   <br clear="center"/>
-      Detected colors shown in a colorful grid 
+      Face duplication window
 </p>
+</details>
+
+## How to "install" the app
+**You need to have OpenCV installed**  
+- clone or download the project;  
+- in Visual Studio: File -> Open -> Project and select "ColorDetection.sln" from above downloaded files;  
+- open Solution Explorer window -> Alt + Enter (project Property Pages should pop-up);  
+- on the left navigation tree -> Configuration Properties -> General tab; 
+- check that "Target Extension" = ".dll";
+- run the app as usually.  
+A "ColorDetection.dll" file will be created under "x64" folder. This .dll file contains the scanned colors. 
+
+## How to use the app
+In order to application work properly, a very important thing to be mention is how the cube will be shown to the webcam. A face of the cube with any color must be shown to the webcam, but considering the following orientations:
+-	The ![#red](https://via.placeholder.com/15/ff0000/000000?text=+) `#red_face` will be scanned with the ![#white](https://via.placeholder.com/15/ffffff/000000?text=+) `#white_face` up;
+-	The ![#white](https://via.placeholder.com/15/ffffff/000000?text=+) `#white_face` will be scanned with the ![#orange](https://via.placeholder.com/15/ff7700/000000?text=+) `#orange_face` up;
+-	The ![#blue](https://via.placeholder.com/15/0000ff/000000?text=+) `#blue_face` will be scanned with the ![#white](https://via.placeholder.com/15/ffffff/000000?text=+) `#white_face` up;
+-	The ![#yellow](https://via.placeholder.com/15/ffff00/000000?text=+) `#yellow_face` will be scanned with the ![#red](https://via.placeholder.com/15/ff0000/000000?text=+) `#red_face` up;
+-	The ![#green](https://via.placeholder.com/15/00ff00/000000?text=+) `#green_face` will be scanned with the ![#white](https://via.placeholder.com/15/ffffff/000000?text=+) `#white_face` up;
+-	The ![#orange](https://via.placeholder.com/15/ff7700/000000?text=+) `#orange_face` will be scanned with the ![#white](https://via.placeholder.com/15/ffffff/000000?text=+) `#white_face` up.
+
+## Development Directions
+ - [ ] ask user to scan each color individually, in order to adept HSV values based on user input
+ - [ ] extend application for other types of cubes/puzzles
+ 
+ ## License & Copyright
+ All tools and libraries used are open-source and can be used by anyone.
+ Feel free to use the code and don't forget to help others, too.
