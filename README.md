@@ -87,7 +87,7 @@ Even if the user will type "n", after some tries eventually, it will be able to 
 - check that "Target Extension" = ".dll";
 - run the app as usually.  
 
-A "ColorDetection.dll" file will be created under "x64" folder. This .dll file contains the scanned colors. 
+A "ColorDetection.dll" file will be created under "x64" folder.  
 
 ## How to use the app
 In order to application work properly, a very important thing to be mention is how the cube will be shown to the webcam. A face of the cube with any color must be shown to the webcam, but considering the following orientations:
