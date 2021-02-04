@@ -86,6 +86,7 @@ Even if the user will type "n", after some tries eventually, it will be able to 
 - on the left navigation tree -> Configuration Properties -> General tab; 
 - check that "Target Extension" = ".dll";
 - run the app as usually.  
+
 A "ColorDetection.dll" file will be created under "x64" folder. This .dll file contains the scanned colors. 
 
 ## How to use the app
@@ -98,9 +99,10 @@ In order to application work properly, a very important thing to be mention is h
 -	The ![#orange](https://via.placeholder.com/15/ff7700/000000?text=+) `#orange_face` will be scanned with the ![#white](https://via.placeholder.com/15/ffffff/000000?text=+) `#white_face` up.
 
 ## Development Directions
- - [ ] ask user to scan each color individually, in order to adept HSV values based on user input
- - [ ] extend application for other types of cubes/puzzles
+ - [ ] ask user to scan each color individually, in order to adept HSV values based on user input;
+ - [ ] extract pixels from a bigger Region Of Interest for an accurate color scanning; 
+ - [ ] extend application for other types of cubes/puzzles;
  
  ## License & Copyright
- All tools and libraries used are open-source and can be used by anyone.
+ All tools and libraries used are open-source and can be used by anyone.  
  Feel free to use the code and don't forget to help others, too.
